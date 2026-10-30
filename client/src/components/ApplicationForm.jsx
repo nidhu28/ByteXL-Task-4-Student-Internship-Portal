@@ -1,9 +1,10 @@
-
+```jsx
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
 function ApplicationForm() {
   const { id } = useParams();
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -21,18 +22,28 @@ function ApplicationForm() {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://dfca83acc4ef-0af40553-5300.ws6.app/proxy/5000/api/applications", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form)
-      });
+      const response = await fetch(
+        "https://bytexl-task4-backend.onrender.com/api/applications",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form)
+        }
+      );
 
       const data = await response.json();
 
-      if (!response.ok) throw new Error(data.message || "Application failed");
+      if (!response.ok) {
+        throw new Error(data.message || "Application failed");
+      }
 
       setMessage("Application submitted successfully!");
-      setForm({ name: "", email: "", rollNumber: "", internship: id });
+      setForm({
+        name: "",
+        email: "",
+        rollNumber: "",
+        internship: id
+      });
     } catch (error) {
       setMessage(error.message || "Error submitting application");
     }
@@ -58,3 +69,4 @@ function ApplicationForm() {
 }
 
 export default ApplicationForm;
+```

@@ -7,7 +7,7 @@ import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter basename="/proxy/5173">
+    <BrowserRouter basename={import.meta.env.DEV ? "/proxy/5173" : "/"}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/internship/:id" element={<InternshipDetails />} />
