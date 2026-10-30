@@ -42,3 +42,8 @@ Before running the application, make sure all dependencies are installed.
    `npm run dev` starts both server and client. If you want to start them separately, you can use following commands:
    - `npm run server`: to start server
    - `npm run client`: to start client
+   ## Student Internship Portal
+
+Developed using React, Node.js, Express and MongoDB.
+
+This application displays available internships, provides internship details, and allows students to submit internship applications.
