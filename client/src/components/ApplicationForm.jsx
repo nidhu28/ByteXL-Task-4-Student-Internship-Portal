@@ -1,4 +1,3 @@
-```jsx
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
@@ -69,4 +68,3 @@ function ApplicationForm() {
 }
 
 export default ApplicationForm;
-```
